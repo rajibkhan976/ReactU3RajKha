@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import CardComponent from './CardComponent';
 
 /* UserComponent shows the user list and also toggle the text color based on the props it received from the DashboardComponent*/
 class UserComponent extends Component {
@@ -21,7 +19,7 @@ class UserComponent extends Component {
     return (
           <ul className="list-group">
             {users.map((user) => {
-              return <Link to={`/user/${user.name}`} key={user.id}>
+              return <Link to={`/user/${user.id}`} key={user.id}>
                   <li className="list-group-item" style={{color: this.props.textColor}} key={user.id}>{user.name}</li>
                   </Link>
                 }
@@ -32,9 +30,5 @@ class UserComponent extends Component {
     );
   }
 }
-//defining prop types for the props users
-UserComponent.propTypes = {
-  users: PropTypes.object.isRequired
-};
 
 export default UserComponent;

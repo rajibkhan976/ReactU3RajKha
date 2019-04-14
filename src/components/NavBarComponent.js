@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, NavLink, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 import LoginScreenComponent from './../screens/LoginScreen/LoginScreenComponent';
 import DashboardScreenComponent from './../screens/DashboardScreen/DashboardScreenComponent';
 import UserScreenComponent from './../screens/UserScreen/UserScreenComponent';
@@ -19,7 +19,7 @@ class NavBarComponent extends Component {
             <Route path="/dashboard" component={DashboardScreenComponent} />
             <Switch>
               <Route path="/user/:id" component={UserScreenComponent} />
-              <Route path="/user" component={LoginScreenComponent} />
+              <Route path="/user" component={UserScreenComponent} />
             </Switch>
         </div>
       </Router>

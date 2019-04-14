@@ -1,7 +1,6 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import UserComponent from './UserComponent';
 import CardComponent from './CardComponent';
-import styles from './WrapperComponentCSS.module.css';
 
 /* DashboardComponent has two states, such as users and color. It has methods to add and remove users and to change the text Color
 of user name. Finally this class sends the UserComponent and the input fields along with two buttons as props to WrapperComponent.
@@ -17,6 +16,7 @@ class DashboardComponent extends Component {
     color: 'blue'
     };
   }
+
   componentDidMount () {
     fetch("http://api.softhouse.rocks/users")
     .then((res) => res.json())
@@ -24,7 +24,6 @@ class DashboardComponent extends Component {
       this.setState({
         users: userList
       });
-      console.log(this.state.users);
     })
     .catch((err) => {
       this.setState({
