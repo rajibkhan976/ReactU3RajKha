@@ -1,0 +1,24 @@
+.cardOne {
+  min-width: 25%;
+  min-height: 25%;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 2%;
+  box-shadow: 2px 2px 2px 2px;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  padding: 1.5%;
+}
+.cardTwo {
+  min-width: 25%;
+  min-height: 25%;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 2%;
+  box-shadow: 2px 2px 2px 2px;
+  position: absolute;
+  top: 10%;
+  left: 65%;
+  padding: 1.5%;
+}
