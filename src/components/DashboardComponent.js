@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import UserComponent from './UserComponent';
 import CardComponent from './CardComponent';
+import extractUserList from '../HOC/DashboardHoc';
 
 /* DashboardComponent has two states, such as users and color. It has methods to add and remove users and to change the text Color
 of user name. Finally this class sends the UserComponent and the input fields along with two buttons as props to WrapperComponent.
@@ -11,25 +12,8 @@ class DashboardComponent extends Component {
     super(props);
     //definition of users and color state
     this.state = {
-    error: null,
-    users: [],
     color: 'blue'
     };
-  }
-
-  componentDidMount () {
-    fetch("http://api.softhouse.rocks/users")
-    .then((res) => res.json())
-    .then((userList) => {
-      this.setState({
-        users: userList
-      });
-    })
-    .catch((err) => {
-      this.setState({
-        error: err
-      })
-    })
   }
   //handling the value of input field
   handleInput = (e) => {
@@ -54,7 +38,8 @@ class DashboardComponent extends Component {
   render () {
     return (
         <CardComponent
-        left={<UserComponent users={this.state.users}
+        left={<UserComponent users={this.props.userData}
+        errorMessage={this.props.errorText}
         textColor={this.state.color}
         toggleTextColor={this.toggleColor}/>}>
           <input className="form-control" type="text" onChange= {this.handleInput}/> <br/>
@@ -65,4 +50,4 @@ class DashboardComponent extends Component {
   }
 }
 
-export default DashboardComponent;
+export default extractUserList(DashboardComponent);

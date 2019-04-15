@@ -26,5 +26,5 @@ code {
 
 .mainContainer {
   max-width: 1400px;
-  height: 625px;
+  height: auto;
 }
